@@ -1,0 +1,114 @@
+html {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li,
+button,
+a {
+  all: unset;
+}
+
+:root {
+  --dark-color: rgb(68, 21, 138);
+  --light-color: rgb(247, 185, 9);
+}
+
+body {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  font-family: 'IBM Plex Mono', sans-serif;
+  margin: 0 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.nav-bar {
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: solid 2px var(--light-color);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: Roboto, sans-serif;
+  font-size: 4rem;
+  display: block;
+}
+
+.navLinkList {
+  gap: 3rem;
+  margin-left: auto;
+}
+
+.navLink {
+  font-size: 1.2rem;
+  transition: all 0.1s;
+}
+
+.bold {
+  font-weight: 900;
+  font-family: 'IBM Plex Mono', sans-serif;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.toggleBtn {
+  position: absolute;
+  right: 10px;
+  display: none;
+  transition: all 50ms;
+}
+
+.toggleBtn:hover {
+  transform: rotate(20deg);
+  cursor: pointer;
+}
+
+.toggleBtn:active {
+  transform: rotate(60deg);
+}
+
+#pin-img {
+  max-width: 5rem;
+}
+
+@media (max-width: 850px) {
+  .navLinkList {
+    position: fixed;
+    inset: 0 0 0 37%;
+    background-color: var(--dark-color);
+    flex-direction: column;
+    padding: min(20vh, 9rem) 2rem;
+    display: none;
+  }
+
+  .navLinkList.active {
+    display: flex;
+  }
+
+  .toggleBtn {
+    display: block;
+    z-index: 9999;
+  }
+}
